@@ -1,17 +1,14 @@
 #include <stdio.h>
+#include <stdint.h>
 #include <inttypes.h>
 
 typedef unsigned long long TypeEntier;
 TypeEntier factorielle(TypeEntier);
 
 int main() {
-   TypeEntier entier=15;
-
-   for(int i=1; i<=entier; i++){
-     printf("factorielle de %d = %" PRIu64 "\n", i, factorielle(i));
-   };
-   
-}
+   TypeEntier entier=24;
+   printf("factorielle de %" PRIu64 " = %" PRIu64 "\n", entier, factorielle(entier));   
+};
 
 TypeEntier factorielle(TypeEntier n) {
    TypeEntier resultat=1;
@@ -20,3 +17,6 @@ TypeEntier factorielle(TypeEntier n) {
    }
    return resultat;
 };
+
+
+
