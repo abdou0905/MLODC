@@ -23,16 +23,16 @@ int main() {
    //declaration de ma date et de son pointeur
    Date date;
    Date *pDate = &date;
-   printf("Question b\n");
+   printf("\nQuestion b\n");
    initialiseDate(pDate);
    afficheDate(pDate);
 
-   printf("Question c\n");
+   printf("\nQuestion c\n");
    Date nouvelleDate;
    nouvelleDate = creerDateParCopie();
    afficheDate(&nouvelleDate);
 
-   printf ("Question d\n");
+   printf ("\nQuestion d\n");
    Date* myNewDate; // new date est un pointeur
    myNewDate = newDate(); 
    afficheDate(myNewDate);
@@ -43,8 +43,8 @@ int main() {
 
 //Question B] Initialise la date en parametre
 void initialiseDate(Date *pDate) {
-   printf("Quelle est votre date de naissance?\n");
-   printf("format: DD MM YYYY\n");
+   printf("\nQuelle est votre date de naissance?\n");
+   printf("\nformat: DD MM YYYY\n");
    scanf("%d %d %d", &pDate->jour, (int*)&pDate->mois, &pDate->annee);
    // scanf("%d %s %d", &pDate->jour, &pDate->mois, &pDate->annee);
 
@@ -70,5 +70,7 @@ Date creerDateParCopie () {
 
 // Question D] 
 Date* newDate() {
-   
+   Date* nouvelleDate = (Date*)malloc(sizeof(Date));
+   initialiseDate(nouvelleDate);
+   return nouvelleDate;
 }
