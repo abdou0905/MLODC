@@ -1,0 +1,162 @@
+[33mcommit a8c77591435c12292cd2cec9312d343be997bcc0[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 070efe2 bc43b97
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Mon Sep 25 17:19:03 2023 +0200
+
+    Merge branch 'main' of https://github.com/LucFabresse/mlod-algoc-sujets
+
+[33mcommit 070efe2c5202ba9bedd1c7f9167cfd89d60956e2[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Sun Sep 24 11:20:45 2023 +0200
+
+    exo MatricesMalloc termine
+
+[33mcommit bc43b978ce007f2be1e11e2186aba40fec19f0e4[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Fri Sep 22 13:47:24 2023 +0200
+
+    update Cours 02
+
+[33mcommit 7feb659aada6915def59ad254b27f2a5fc86ec1e[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Fri Sep 22 12:03:09 2023 +0200
+
+    fin exo Beer
+
+[33mcommit 5a7472fe8b212757c712de2e179be2539b50d899[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Fri Sep 22 10:36:55 2023 +0200
+
+    fin exo Date + exo Beer
+
+[33mcommit 8563dfb55d25a455b92da0ee63dd561e53b43069[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Thu Sep 21 10:42:46 2023 +0200
+
+    update TP3
+
+[33mcommit 7a813172abde889661da52c85b575a85de6fa79b[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Wed Sep 20 11:55:08 2023 +0200
+
+    exercice Date, non achevé
+
+[33mcommit 484fd75fb0fad46b187abb1de6f3e5067986d917[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Wed Sep 20 11:15:39 2023 +0200
+
+    rm tex
+
+[33mcommit 809e72953b0f49b24b1bc275b29f2cdd1dfda0b8[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Wed Sep 20 11:09:49 2023 +0200
+
+    TP2 update
+
+[33mcommit d6ebeaee5a6a48970c627e47768442ed6978c89b[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Wed Sep 20 10:44:03 2023 +0200
+
+    update TP2
+
+[33mcommit 940c9cc3651128ca6615febccea818a78a8256e0[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Wed Sep 20 10:20:09 2023 +0200
+
+    exercice Matrices
+
+[33mcommit f077ff1b88f27f576f9773dbd6ce5c73b7d3ec55[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Wed Sep 20 09:23:39 2023 +0200
+
+    exercice echnage contenu
+
+[33mcommit 1ebd4dd7a1dcf4a57e2b957d123de9482c0463d7[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Wed Sep 20 08:30:16 2023 +0200
+
+    rm non x4 slide
+
+[33mcommit cc74f45b8a994db273aa955908e6724e997c4ac2[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 22:11:30 2023 +0200
+
+    exercice Isogramme debut
+
+[33mcommit 2dc85f691889dc0c8b8a27d540c04d1fe9ba3214[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 21:29:03 2023 +0200
+
+    exercice Grain, pb avec la taille du result
+
+[33mcommit 5bef340a38ebd1d7760065fa445aa5125766b3a3[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 21:01:38 2023 +0200
+
+    Exercice Colors
+
+[33mcommit abba680dbad5a6dd444af7570fd9b979e835e3ab[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 16:53:50 2023 +0200
+
+    exercice Difference Of Square
+
+[33mcommit 2701c455de130d630e2d9cb2fd030aafb8513c88[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 15:34:49 2023 +0200
+
+    correction factorielle
+
+[33mcommit a1aac37d0add1279ecc0477fd7fb06cbdf9164f1[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 15:14:58 2023 +0200
+
+    fin exercice nombre parfait
+
+[33mcommit d9c344857357bb9c0b935ad0c5d55afc34580462[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Tue Sep 19 15:12:37 2023 +0200
+
+    update makefile TP02
+
+[33mcommit adf14edfc4d30ae62525de8ada2520da7662f7a8[m
+Author: Patarot <adele.patarot@gmail.com>
+Date:   Tue Sep 19 15:10:27 2023 +0200
+
+    fin exercice factorielle
+
+[33mcommit 3f3ac24b7f9ba6bebedd798162f09716d8e5f456[m[33m ([m[1;31mupstream/main[m[33m)[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Tue Sep 19 14:36:06 2023 +0200
+
+    update git sync
+
+[33mcommit 8b7342e27905e21bbc28a3cb3458260ccf47af42[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Tue Sep 19 12:59:47 2023 +0200
+
+    add endianess
+
+[33mcommit 2f8dbd1a09d26b1a5894cf031d84dd067289d40f[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Tue Sep 19 08:55:47 2023 +0200
+
+    update sujet TP2
+
+[33mcommit 2788744d33f6addd05749f65d8b3b5a807431864[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Fri Nov 4 15:08:38 2022 +0100
+
+    HOWTO Raylib
+
+[33mcommit 0514ecef06cc360575ae247c4f6b482d98d0be0e[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Mon Oct 10 17:22:40 2022 +0200
+
+    fix s11
+
+[33mcommit 26c848e8fc92c5e05571702895f39f5935be3793[m
+Author: LucFabresse <luc.fabresse@gmail.com>
+Date:   Fri Oct 7 17:55:42 2022 +0200
+
+    squelette des TPs de C
