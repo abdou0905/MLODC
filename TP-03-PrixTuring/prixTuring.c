@@ -15,7 +15,6 @@
 #include <string.h>
 #include <errno.h>
 #include <assert.h>
-<<<<<<< HEAD
 #include <stdbool.h>
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // VARIABLES
@@ -201,19 +200,6 @@ int main(int argc, char** argv)
 
 	//liberation de la memoire
 	free(dataWinners);
-=======
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// MAIN
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-int main(int argc, char** argv)
-{
-	char filename[] = "turingWinners.csv";
-	char outputFilename[] = "out.csv";
-
-    // TODO
->>>>>>> a8c77591435c12292cd2cec9312d343be997bcc0
 
 	return EXIT_SUCCESS;
 }
