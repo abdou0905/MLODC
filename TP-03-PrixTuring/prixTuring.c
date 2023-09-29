@@ -9,12 +9,6 @@
  diff out.csv turingWinners.csv
 
 **/
-
-//READ ME
-//to do
-// BUG dans la memoire je pense: essayer peut etre d'imprimer l'ensemble des donnees de data une fois qu'elles ont ete copié
-// par la suite: passer à l'étape de parcourir l'ensemble des data: copier de data vers le fichier out.csv
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -80,17 +74,14 @@ void afficheNumberOfWinners(int number) {
 	printf("Nombre de ligne du fichier= %d\n", number);
 }
 
-
 /*
 	@attribuerDate
 	attribue dans dataWinner la date du winner traité
 */
-void attribuerDate(char dateChaine[], int numeroWinner, Winner* dataWinners) {
+void attribuerDate(char dateChaine[], int numeroWinner, Winner* dataWinners, FILE* destination) {
 	int date= atoi(dateChaine);
 	dataWinners[numeroWinner].annee=date;
-	// faire la copie dans le fichier directement, MALIN!
-	
-	printf("winner numero %d date = %d\n", numeroWinner, dataWinners[numeroWinner].annee);
+	// printf("winner numero %d date = %d\n", numeroWinner, dataWinners[numeroWinner].annee);
 }
 
 /*
@@ -99,7 +90,7 @@ void attribuerDate(char dateChaine[], int numeroWinner, Winner* dataWinners) {
 */
 void attribuerNom(char nomChaine[], int numeroWinner, Winner* dataWinners) {
 	dataWinners[numeroWinner].nomWinner=nomChaine;
-	printf("winner numero %d nom = %s\n", numeroWinner, dataWinners[numeroWinner].nomWinner);
+	// printf("winner numero %d nom = %s\n", numeroWinner, dataWinners[numeroWinner].nomWinner);
 }
 
 /*
@@ -108,15 +99,27 @@ void attribuerNom(char nomChaine[], int numeroWinner, Winner* dataWinners) {
 */
 void attribuerNature(char nomChaine[], int numeroWinner, Winner* dataWinners) {
 	dataWinners[numeroWinner].natures=nomChaine;
-	printf("winner numero %d nature = %s\n", numeroWinner, dataWinners[numeroWinner].natures);
+	// printf("winner numero %d nature = %s\n", numeroWinner, dataWinners[numeroWinner].natures);
 }
 
+/*
+	@printWinner
+	copie la donnée mise en entrée d'un winner 
+*/
+void printWinner(char chaine[], FILE* destination, int typeDonne) {
+	fputs(chaine,destination);
+	if(typeDonne == 2) {
+		fputs("\n", destination);
+	} else {
+		fputs(";", destination);
+	}
+}
 
 /*
 	@readWinners
 	lit en memoire les informations du fichier d'origine + stocke en memoire les données dans dataWinners
 */			
-void readWinners(FILE* fichier) {
+void readWinners(FILE* fichier, FILE* destination) {
 	//lecture du fichier
 	rewind(fichier);
 	char caractere;
@@ -125,7 +128,7 @@ void readWinners(FILE* fichier) {
 	}
 
 	rewind(fichier);
-	printf("\n\nCOPIE DES DONNEES FICHIERS EN MEMOIRE\n");
+	printf("\n\nCOPIE DES DONNEES 'TurringWinner.csv' EN MEMOIRE\n");
 
 	//stockage des infos dans le tableau de data
 	int numberOfLines=numberOfWinners(fichier);
@@ -133,8 +136,8 @@ void readWinners(FILE* fichier) {
 	rewind(fichier);
 	
    char caractere2; // caractere en cours de lecture
-   while (numeroWinner < numberOfLines) { // tant que different de saut de ligne,on parcour la meme ligne
-      for (int numeroColonne = 0; numeroColonne <= 2; numeroColonne++) { // parcours des colonnes de la ligne
+   while (numeroWinner < numberOfLines) { // parcours de l'ensemble du fichier
+      for (int numeroColonne = 0; numeroColonne <= 2; numeroColonne++) { // parcours des "colonnes" de la ligne: date/nom/natures
    	   // Declaration et Initilisation du buffer
          char buffer[500];
          memset(buffer, 0, sizeof(buffer));
@@ -155,15 +158,18 @@ void readWinners(FILE* fichier) {
          }
 
          // On marque la fin de la chaine de caractère
-          buffer[nombreCaractere] = '\0';
+         buffer[nombreCaractere] = '\0';
 
-         // Attribution en fonction du type de données
+         // Attribution en fonction du type de données + Copie de la donnée dans le fichier de copie
          if (numeroColonne == 0) {
-            attribuerDate(buffer, numeroWinner, dataWinners);
+            attribuerDate(buffer, numeroWinner, dataWinners,destination);
+				printWinner(buffer,destination,numeroColonne);
          } else if (numeroColonne == 1) {
             attribuerNom(buffer, numeroWinner, dataWinners);
+				printWinner(buffer,destination,numeroColonne);
          } else if (numeroColonne == 2) {
             attribuerNature(buffer, numeroWinner, dataWinners);
+				printWinner(buffer,destination,numeroColonne);
 				numeroWinner++;
          }
          
@@ -175,68 +181,13 @@ void readWinners(FILE* fichier) {
    }	
 }
 
-
-/*
-	@printWinners
-	prend les donnes data et vient les ecrires dans fichier
-*/
-void printWinners(FILE* fichierDestinationCopie, Winner* datas, int nbOfWinner) {
-	//copier les informations
-
-	// char chaine1[5];
-	// char chaine2[100];
-	// char chaine3[200];
-
-	// sprintf(chaine1, "%d", datas[0].annee);
-	// printf("\n%s", chaine1);
-
-	// sprintf(chaine2, "%s", datas[3].nomWinner);
-	// printf("\n%s",chaine2);
-	// // printf("\n%s", datas[0].natures);
-
-	// sprintf(chaine3, "%s", datas[0].natures);
-	// printf("\n%s", chaine3);
-
-
-
-	for(int i=0; i<nbOfWinner;i++){
-		//initialisation du buffer
-		char buffer[500];
-      memset(buffer, 0, sizeof(buffer));
-
-		
-		
-		//faire buffer= une ligne complete
-		// char chaine1[6];
-
-		// sprintf(chaine1, "%d", datas[i].annee);
-
-		// strcat(buffer, chaine1);
-		// char chaine2[100];
-		// strcpy(chaine2,datas[i].nomWinner);
-		// printf("%s",chaine2);
-
-		// strcat(buffer, chaine2);
-		// strcat(buffer, datas[i].natures);
-
-		// printf("buffer = %s", buffer);
-
-
-		printf("date winner %d = %d\n",i,datas[i].annee);
-		printf("nom winner %d = %s\n",i,datas[i].nomWinner);
-		printf("natures winner %d = %s\n",i,datas[i].natures);
-
-		//copie de une ligne	dans le fichier out
-		// fputs(buffer,fichierDestinationCopie);
-	}
-}
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // MAIN
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 int main(int argc, char** argv)
 {
+	//Declaration des noms de fichiers
 	char filename[] = "turingWinners.csv";
 	char outputFilename[] = "out.csv";
 
@@ -245,29 +196,21 @@ int main(int argc, char** argv)
 	FILE * out = fopen(outputFilename, "w"); //write mode
 
 	if(fichierValide(turingWinners,filename) && fichierValide(out, outputFilename)) {
-		//Allocation dynamique en mémoire de datas
+		//Allocation dynamique en mémoire de dataWinner
 		int nbOfWinner = numberOfWinners(turingWinners);
 		dataWinners = (Winner *)malloc(nbOfWinner*sizeof(Winner));
 
-		//Lis le fichier + stocke en memoire les infos dans dataWinners
+		//Lis le fichier + stocke en memoire les infos dans dataWinners + copie des données dans le fichier de copie
 		printf("\nLECTURE DU FICHIER 'TuringWinners.csv'\n\n\n");
-		readWinners(turingWinners);	
-
-		//Copie de dataWinners vers out
-		// / utilisation de la fonction printWinner
+		readWinners(turingWinners, out);	
 		printf("\nCOPIE DES DONNES DANS OUT.CSV\n\n");
-
-		
-
-		printWinners(out,dataWinners,nbOfWinner);
-
 	}
 	
 	//Fermeture des fichiers
 	fclose(turingWinners);
 	fclose(out);
 
-	//liberation de la memoire
+	//Liberation memoire
 	free(dataWinners);
 
 	return EXIT_SUCCESS;
