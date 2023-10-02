@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 int main(void){
-	Liste l, p;
+	Liste l,p;
 
 	l = NULL;
 	printf("estVide(l) = %s\n",estVide(l)?"TRUE":"FALSE");
@@ -21,12 +21,24 @@ int main(void){
 	l = ajoutTete(4,l);
 	l = ajoutTete(1,l);
 
+	printf("\naffichage iteratif\n");
+	afficheListe_i(l);
+	printf("\naffichage recursif\n");
+	afficheListe_r(l);
+
+	// detruire_i(l);
+	// detruire_r(l);
+
+	printf("\nAjout fin iteratif\n");
+	l = ajoutFin_i(99,l);
 	afficheListe_i(l);
 
-	ajoutFin_r(99,l);
-	afficheListe_i(l);
-
+	printf("\nAjout fin recursif\n");
 	ajoutFin_r(100,l);
+	afficheListe_i(l);
+
+	printf("\nAjout fin recursif\n");
+	ajoutFin_r(101,l);
 	afficheListe_i(l);
 
 	p = cherche_i(200,l);
@@ -35,10 +47,10 @@ int main(void){
 	p = cherche_i(99,l);
 	if(estVide(p))
 		printf("cherche_i(99) : [ERREUR] pas trouve \n");
-	else {
-		printf("cherche_i(99) : trouve ");
-		afficheElement(p->val);
-		printf("\n");
+	 else {
+	 	printf("cherche_i(99) : trouve ");
+	 	afficheElement(p->val);
+	 	printf("\n");
 	}
 
 	p = cherche_r(200,l);
@@ -50,34 +62,34 @@ int main(void){
 	else {
 		printf("cherche_r(99) : trouve ");
 		afficheElement(p->val);
-		printf("\n");
+	 	printf("\n");
 	}
 
-	printf("retirePremier_i(1)   : ");
+	printf("retirePremier_i(1)   : \n");
 	l = retirePremier_i(1,l);
 	afficheListe_r(l);
 
-	printf("retirePremier_i(1)   : ");
-	l = retirePremier_i(1,l);
-	afficheListe_r(l);
+	// printf("retirePremier_i(1)   : ");
+	// l = retirePremier_i(1,l);
+	// afficheListe_r(l);
 
-	printf("retirePremier_i(100) : ");
-	l = retirePremier_i(100,l);
-	afficheListe_r(l);
+	// printf("retirePremier_i(100) : ");
+	// l = retirePremier_i(100,l);
+	// afficheListe_r(l);
 
-	printf("retirePremier_r(4)   : ");
-	l = retirePremier_r(4,l);
-	afficheListe_r(l);
+	// printf("retirePremier_r(4)   : ");
+	// l = retirePremier_r(4,l);
+	// afficheListe_r(l);
 
-	printf("retirePremier_r(4)   : ");
-	l = retirePremier_r(4,l);
-	afficheListe_r(l);
+	// printf("retirePremier_r(4)   : ");
+	// l = retirePremier_r(4,l);
+	// afficheListe_r(l);
 
-	printf("retirePremier_r(99)  : ");
-	l = retirePremier_r(99,l);
-	afficheListe_r(l);
+	// printf("retirePremier_r(99)  : ");
+	// l = retirePremier_r(99,l);
+	// afficheListe_r(l);
 
-	detruire_r(l);
+	// detruire_r(l);
 
 	return EXIT_SUCCESS;
 }
