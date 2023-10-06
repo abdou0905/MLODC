@@ -40,11 +40,13 @@ int distanceBetweenNucleotides(char n1, char n2) {
    return indexOf(n1)-indexOf(n2);
 }
 
+//Fonction double pour pouvoir faire les divisions
 double* statistics(char chaine[]){
 	//initialisation du tableau de resultat
 	double resultat[4]={0,0,0,0};
 	double* pointeur=resultat;
 	
+	//On compte les occurences de chaque lettre
 	for(int i=0; i<strlen(chaine); i++){
 		if(isNucleotide(chaine[i])){
 			if(chaine[i]=='A'){
@@ -70,7 +72,6 @@ double* statistics(char chaine[]){
 Difference* newDifference(){
 	Difference* new = (Difference*)malloc(sizeof(Difference));
 	return new;
-
 }
 
 Difference* initiDifference(int index, int distance, Difference* new){
