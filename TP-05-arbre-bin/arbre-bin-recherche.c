@@ -4,39 +4,78 @@
 
 // retourne TRUE si a est l'arbre vide et FALSE sinon
 bool estVide(ArbreBinaire a) {
-	return true;
+	if(a == NULL){
+		return true;
+	} else {
+		return false;
+	}
 }
 
 // initialise l'arbre a à l'arbre vide
 void initialiser(ArbreBinaire* a) {
+	*a=NULL;
 }
 
 // créer un arbre contenant un seul noeud ayant la valeur e
 ArbreBinaire creer(Element e) {
-
-	return NULL;
+	ArbreBinaire a=malloc(sizeof(Noeud));
+	a->val=e;
+	a->filsDroit=NULL;
+	a->filsGauche=NULL;
+	return a;
 }
 
 // insere e dans a sachant que a est un arbre binaire de recherche
 // si a contient déjà un element e, ce dernier n'est pas insérer afin d'éviter les doublons
 // version itérative
 ArbreBinaire insere_i(ArbreBinaire a, Element e) {
+	int valeur=0;
+	ArbreBinaire courant=a;
 
-	return NULL;
+	if (estVide(a)){
+		a=creer(e);
+		return a;
+		//si a est vide alors on ajoute e comme premier element
+	}
+
+	if(a->val==e){
+		return a;
+		//si le premier noeud pour valeur e, on ne fait rien
+	}
+
+	valeur=a->val;
+	courant=a;
+
+	while(!estVide(courant)) {
+		// tant que a ne pointe pas vers un NULL ou que l'on a pas eu une valeur egale a e
+		if(valeur>e){ // go droite
+			courant=courant->filsDroit;
+			valeur=courant->val;
+		} else if(valeur<e) {
+			courant=courant->filsGauche;
+			valeur=courant->val;
+		} else { // valeur = e
+			return a;
+		}
+	}
+
+	// en sortie du while courant = au bon emplacement
+	courant = creer(e);
+
+	return a;
 }	
 
 // insere e dans a sachant que a est un arbre binaire de recherche
 // si a contient déjà un element e, ce dernier n'est pas insérer afin d'éviter les doublons
 // version récursive
 ArbreBinaire insere_r(ArbreBinaire a, Element e) {
-	
-	return NULL;
+	return 0;
 }
 
 // retourne le nombre de noeud contenus dans l'arbre a
 int nombreDeNoeud(ArbreBinaire a){
-
-		return 0;
+	
+	return 0;
 }
 
 

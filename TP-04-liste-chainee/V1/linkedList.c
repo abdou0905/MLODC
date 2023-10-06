@@ -1,4 +1,4 @@
-#include "liste-chainee.h"
+#include "linkedList.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -29,11 +29,6 @@ Liste ajoutTete(Element v, Liste l) {
 	return liste;
 }
 
-
-void afficheElement(Element e) {
-	printf("%i ",e);
-}
-
 // affiche tous les éléments de la liste l
 // Attention, cette fonction doit être indépendante du type des éléments de la liste
 // utiliser une fonction annexe affiche_element
@@ -57,8 +52,6 @@ void afficheListe_r(Liste l) {
 		printf("\n");
 	}
 }
-
-void detruireElement(Element e) {}
 
 // Détruit tous les éléments de la liste l
 // version itérative
@@ -143,28 +136,6 @@ Liste cherche_r(Element v,Liste l) {
 // ne fait rien si aucun élément possède cette valeur
 // version itérative
 Liste retirePremier_i(Element v, Liste l) {
-	// Liste courant = l;
-	// Liste precedent = NULL;
-
-	// printf("%i\n", courant->val);
-
-	// while(!estVide(courant) && !equalsElement(courant->val,v)){
-	// 	printf("%i\n", courant->val);
-	// 	precedent=courant;
-	// 	courant=courant->suiv;
-	// }
-	
-	// printf("fin while\n");
-	
-	// if(precedent==NULL){
-	// 	precedent=courant;
-	// }	
-	// precedent->suiv=courant->suiv;
-	// detruireElement(courant->val);
-	// free(courant);
-
-	// return l;
-
 	Liste precedent,p;
 
 	if(estVide(l)){
